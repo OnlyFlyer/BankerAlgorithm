@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banker Algorithm</title>
+    <script>
+        function verify1(){
+            var process = document.getElementById("process").value;
+            if(process > 4 || process < 0){
+                alert("输入错误,请重新输入!");
+            }else{
+                alert("验证成功,请继续下一项")
+            }
+        }
+    </script>
+    <style>
+        body{
+            background-image: url(./background.jpg);
+        }
+        #div1{
+            float: left;
+            text-align: center;
+            color: black;
+            width: 450px;
+            height: 520px;
+            background: steelblue;
+            padding-left: 30px;
+            padding-top: 30px;
+        }
+        #div2{
+            text-align: center;
+            float: left;
+            width: 500px;
+            height: 70px;
+            background: red;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #div3{
+            text-align: center;
+            float: left;
+            width: 500px;
+            height: 30px;
+            background: deepskyblue;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #div4{
+            text-align: center;
+            float: left;
+            width: 500px;
+            height: 30px;
+            background: deepskyblue;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #div5{
+            text-align: center;
+            float: left;
+            width: 500px;
+            height: 30px;
+            background: deepskyblue;
+            padding: 10px 20px 40px 20px;
+        }
+        #div6{
+            text-align: center;
+            float: left;
+            width: 500px;
+            height: 70px;
+            background: chartreuse;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>已知:</h1>
+    <div id="div1">
+        <table border="1">
+            <tr>
+                <td>
+                    <h5>银行家总共拥有的各类资源总数:</h5>
+                    <h6>&nbsp;&nbsp;A&nbsp;&nbsp;B&nbsp;&nbsp;C</h6>
+                    <h6>&nbsp;&nbsp;10&nbsp;&nbsp;5&nbsp;&nbsp;7</h6>
+                </td>
+                <td>
+                    <h5>银行家目前剩下的各类资源总数:</h5>
+                    <h6>&nbsp;&nbsp;A&nbsp;&nbsp;B&nbsp;&nbsp;C</h6>
+                    <h6>&nbsp;&nbsp;3&nbsp;&nbsp;3&nbsp;&nbsp;2</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>各进程对各类资源的最大需求量:</h5>
+                    <h6>&nbsp;&nbsp;A&nbsp;&nbsp;B&nbsp;&nbsp;C</h6>
+                    <h6>P0: 1&nbsp;&nbsp;2&nbsp;&nbsp;2</h6>
+                    <h6>P1: 7&nbsp;&nbsp;4&nbsp;&nbsp;3</h6>
+                    <h6>P2: 1&nbsp;&nbsp;2&nbsp;&nbsp;2</h6>
+                    <h6>P3: 1&nbsp;&nbsp;2&nbsp;&nbsp;2</h6>
+                    <h6>P4: 1&nbsp;&nbsp;2&nbsp;&nbsp;2</h6>
+                </td>
+                <td>
+                    <h5>各进程已分配到的各类资源:</h5>
+                    <h6>&nbsp;&nbsp;A&nbsp;&nbsp;B&nbsp;&nbsp;C</h6>
+                    <h6>P0: 0&nbsp;&nbsp;0&nbsp;&nbsp;0</h6>
+                    <h6>P1: 0&nbsp;&nbsp;0&nbsp;&nbsp;0</h6>
+                    <h6>P2: 0&nbsp;&nbsp;0&nbsp;&nbsp;0</h6>
+                    <h6>P3: 0&nbsp;&nbsp;0&nbsp;&nbsp;0</h6>
+                    <h6>P4: 0&nbsp;&nbsp;0&nbsp;&nbsp;0</h6>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="content">
+    <form action="/parse" method="get">
+        <div id="div2">
+            请输入需申请的进程号(从0-4):
+            <input type="text" name="process" id="process">
+            <input type="button" onclick="verify1()" value="验证">
+        </div>
+        <div id="div3">
+            请输入资源数A:
+            <input type="text" name="resource1" id="resource1">
+        </div>
+        <div id="div4">
+            请输入资源数B:
+            <input type="text" name="resource2" id="resource2">
+        </div>
+        <div id="div5">
+            请输入资源数C:
+            <input type="text" name="resource3" id="resource3">
+        </div>
+        <div id="div6">
+            <input type="submit">
+        </div>
+</div>
+
+</form>
+</body>
+</html>
